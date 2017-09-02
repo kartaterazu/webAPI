@@ -45,13 +45,14 @@ class SiteController extends Controller
 
 		if(isset($email))
 		{
-			$data_register = array('email' => $email, 'password' => $password, 'confirmation_password' => $confirmation);
+			$data_register 	= array('email' => $email, 'password' => $password, 'confirmation_password' => $confirmation);
+			$api_data 		= json_encode($data_register);
+			$register 		= MyHelpers::jhCurl($this->api_url.'register', $api_data);
+			$response 		= json_decode($register,true);
 
-			$api_data = json_encode($data_register);
-
-			$register = MyHelpers::jhCurl($this->api_url.'register', $api_data);
-
-			$response = json_decode($register,true);
+			//dummy data
+			/*$response = array('success'=>true,'message'=>'user registration success');
+			$register = json_encode($response);*/
 
 			if($response['success'] == 1)
 			{
