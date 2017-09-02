@@ -49,30 +49,18 @@ Add SendGrid to your `composer.json` file. If you are not using [Composer](http:
 ```json
 {
   "require": {
-    "sendgrid/sendgrid": "~5.4"
+    "sendgrid/sendgrid": "~5.6"
   }
 }
 ```
 
-Then at the top of your PHP script require the autoloader:
-
-```bash
-require 'vendor/autoload.php';
-```
-
 #### Alternative: Install package from zip
 
-If you are not using Composer, simply download and install the **[latest packaged release of the library as a zip](https://sendgrid-open-source.s3.amazonaws.com/sendgrid-php/sendgrid-php.zip)**.
+If you are not using Composer, simply download and install the **[latest packaged release of the library as a zip](https://github.com/sendgrid/sendgrid-php/archive/master.zip)**.
 
-[**⬇︎ Download Packaged Library ⬇︎**](https://sendgrid-open-source.s3.amazonaws.com/sendgrid-php/sendgrid-php.zip)
+[**⬇︎ Download Packaged Library ⬇︎**](https://github.com/sendgrid/sendgrid-php/archive/master.zip)
 
-Then require the library from package:
-
-```php
-require("path/to/sendgrid-php/sendgrid-php.php");
-```
-
-Previous versions of the library can be found in the [version index](https://sendgrid-open-source.s3.amazonaws.com/index.html).
+Previous versions of the library can be found in the [version index](https://sendgrid-open-source.s3.amazonaws.com/index.html) or downloaded directly from GitHub.
 
 ## Dependencies
 
@@ -94,10 +82,10 @@ require 'vendor/autoload.php';
 // If you are not using Composer
 // require("path/to/sendgrid-php/sendgrid-php.php");
 
-$from = new SendGrid\Email(null, "test@example.com");
-$subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "test@example.com");
-$content = new SendGrid\Content("text/plain", "Hello, Email!");
+$from = new SendGrid\Email("Example User", "test@example.com");
+$subject = "Sending with SendGrid is Fun";
+$to = new SendGrid\Email("Example User", "test@example.com");
+$content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
 $apiKey = getenv('SENDGRID_API_KEY');
@@ -105,7 +93,7 @@ $sg = new \SendGrid($apiKey);
 
 $response = $sg->client->mail()->send()->post($mail);
 echo $response->statusCode();
-echo $response->headers();
+print_r($response->headers());
 echo $response->body();
 ```
 
@@ -131,7 +119,7 @@ $request_body = json_decode('{
           "email": "test@example.com"
         }
       ],
-      "subject": "Hello World from the SendGrid PHP Library!"
+      "subject": "Sending with SendGrid is Fun"
     }
   ],
   "from": {
@@ -140,7 +128,7 @@ $request_body = json_decode('{
   "content": [
     {
       "type": "text/plain",
-      "value": "Hello, Email!"
+      "value": "and easy to do anywhere, even with PHP"
     }
   ]
 }');
@@ -151,7 +139,7 @@ $sg = new \SendGrid($apiKey);
 $response = $sg->client->mail()->send()->post($request_body);
 echo $response->statusCode();
 echo $response->body();
-echo $response->headers();
+print_r($response->headers());
 ```
 
 ## General v3 Web API Usage (With Fluent Interface)
@@ -167,7 +155,7 @@ require 'vendor/autoload.php';
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
-$response = $sg->client->suppressions()->bounces()->get();
+$response = $sg->client->suppression()->bounces()->get();
 
 print $response->statusCode();
 print $response->headers();

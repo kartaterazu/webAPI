@@ -20,19 +20,13 @@
 
 		<link href="<?php echo Yii::app()->request->baseUrl;?>/css/jquery-ui.min.css?v=1.0" rel="stylesheet">
 		<link href="<?php echo Yii::app()->request->baseUrl;?>/css/styles.min.css?v=1.1" rel="stylesheet">
-		<link href="<?php echo Yii::app()->request->baseUrl;?>/css/font-awesome.min.css?v=1.0" rel="stylesheet">
-		<link href="<?php echo Yii::app()->request->baseUrl;?>/css/jquery.fancybox.min.css?v=1.0" rel="stylesheet">
 
 		<?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
 	</head>
 	<body>
-	  	<a id="scroll-top" class="btn btn-md btn-warning" href="#top" title="Back to top"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-		
-  		<!-- Start Content -->
+	  	<!-- Start Content -->
 	  	<?php echo $content; ?>
 	  	<!-- End Content -->
-
-		<div class="loading_jh"></div>
 
 		<script>
 		  jQuery.ajaxSetup({async:true});
@@ -41,7 +35,6 @@
 		  });
 		</script>
 		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl;?>/js/bootstrap.min.js?v=1.0"></script>
-		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl;?>/js/jquery.fancybox.min.js?v=1.0"></script>
 		<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl;?>/js/jquery-ui.min.js?v=1.0"></script>
 
 		<!-- Project Starter by Dhima Tauvik Ariezha -->

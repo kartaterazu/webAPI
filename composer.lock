@@ -177,16 +177,16 @@
         },
         {
             "name": "sendgrid/php-http-client",
-            "version": "3.6.0",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/php-http-client.git",
-                "reference": "f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1"
+                "reference": "bec48e0e2e41331438ba7872805b86c45387178d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1",
-                "reference": "f886cd3cf48bafd3c7b28b1ca5c2484f7916cff1",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/bec48e0e2e41331438ba7872805b86c45387178d",
+                "reference": "bec48e0e2e41331438ba7872805b86c45387178d",
                 "shasum": ""
             },
             "require": {
@@ -225,25 +225,25 @@
                 "rest",
                 "sendgrid"
             ],
-            "time": "2017-03-02T05:51:19+00:00"
+            "time": "2017-05-05T06:15:41+00:00"
         },
         {
             "name": "sendgrid/sendgrid",
-            "version": "5.4.1",
+            "version": "5.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sendgrid/sendgrid-php.git",
-                "reference": "9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591"
+                "reference": "bed6a418706b09188fad2755de2e1c231ba74e69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591",
-                "reference": "9ac2aa09a4dfe3151bff2fc5f51a4bbf7aac8591",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/bed6a418706b09188fad2755de2e1c231ba74e69",
+                "reference": "bed6a418706b09188fad2755de2e1c231ba74e69",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6",
-                "sendgrid/php-http-client": "~3.5"
+                "sendgrid/php-http-client": "~3.7"
             },
             "replace": {
                 "sendgrid/sendgrid-php": "*"
@@ -271,7 +271,7 @@
                 "send",
                 "sendgrid"
             ],
-            "time": "2017-04-04T18:23:00+00:00"
+            "time": "2017-06-30T04:48:44+00:00"
         },
         {
             "name": "twbs/bootstrap",
