@@ -1,0 +1,7 @@
+{
+    "require": {
+        "baibaratsky/php-mailgun": "^1.2",
+        "cornernote/yii-audit-module": "*",
+        "sendgrid/sendgrid": "~5.2"
+    }
+}
